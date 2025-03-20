@@ -5,20 +5,20 @@ import { TodoList } from './components/TodoList';
 import usersFromServer from './api/users';
 import todosFromServer from './api/todos';
 
-type User = {
+export interface User {
   id: number;
   name: string;
   email: string;
   username: string;
-};
+}
 
-export type Todo = {
+export interface Todo {
   id: number;
   title: string;
   userId: number;
   completed: boolean;
-  user?: User | null;
-};
+  user?: User | null | undefined;
+}
 
 function getUserById(userId: number): User | null {
   return usersFromServer.find(user => user.id === userId) || null;

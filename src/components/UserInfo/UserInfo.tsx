@@ -1,8 +1,7 @@
+import { User } from '../../App';
+
 interface Props {
-  user: {
-    name: string;
-    email: string;
-  };
+  user: User;
 }
 
 export const UserInfo: React.FC<Props> = ({ user }) => {
